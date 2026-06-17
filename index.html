@@ -206,16 +206,20 @@
       <h2>지금 세금, 점검받아 보세요</h2>
       <p class="lead">연락처만 남기시면 24시간 내 세무사가 직접 연락드립니다.</p>
       <form id="applyForm" onsubmit="return submitForm(event)">
-        <div><label>성함 / 상호</label><input required placeholder="예) 김사장 또는 OO상회" /></div>
-        <div><label>연락처</label><input required type="tel" placeholder="010-0000-0000" /></div>
+        <input type="hidden" name="_subject" value="[정유진 세무회계] 새 무료상담 신청 🔔">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div><label>성함 / 상호</label><input name="성함_상호" required placeholder="예) 김사장 또는 OO상회" /></div>
+        <div><label>연락처</label><input name="연락처" required type="tel" placeholder="010-0000-0000" /></div>
         <div><label>사업 형태</label>
-          <select required><option value="">선택해 주세요</option>
+          <select name="사업형태" required><option value="">선택해 주세요</option>
             <option>개인사업자</option><option>프리랜서·N잡</option><option>법인(설립 예정 포함)</option><option>부동산 임대</option><option>아직 미정</option></select></div>
         <div><label>상담 관심 분야</label>
-          <select required><option value="">선택</option>
+          <select name="상담분야" required><option value="">선택</option>
             <option>기장 대행</option><option>종합소득세</option><option>부가세</option><option>법인세</option><option>양도세</option><option>창업/사업자등록</option><option>기타</option></select></div>
-        <div><label>간단 메모 (선택)</label><textarea rows="3" placeholder="현재 상황이나 궁금한 점을 적어주세요."></textarea></div>
-        <button type="submit" class="btn btn-gold btn-block">무료 상담 신청하기</button>
+        <div><label>간단 메모 (선택)</label><textarea name="메모" rows="3" placeholder="현재 상황이나 궁금한 점을 적어주세요."></textarea></div>
+        <button id="submitBtn" type="submit" class="btn btn-gold btn-block">무료 상담 신청하기</button>
         <p class="form-note">🔒 입력 정보는 상담 목적 외에 사용되지 않습니다.</p>
       </form>
     </div>
@@ -245,11 +249,27 @@
 </div>
 
 <script>
+  // ▼▼ 상담 신청을 받을 이메일 (실제 고객 사이트는 이 한 줄만 고객 이메일로 교체) ▼▼
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/rkdalwjd080522@gmail.com";
+  // ▲▲ 처음 1회 제출하면 이 메일로 활성화 확인 메일이 옵니다 → 클릭하면 이후 정상 수신 ▲▲
   function submitForm(e){
     e.preventDefault();
-    document.getElementById('formBox').style.display='none';
-    document.getElementById('success').style.display='block';
-    document.getElementById('apply').scrollIntoView({behavior:'smooth'});
+    var form=document.getElementById('applyForm');
+    var btn=document.getElementById('submitBtn');
+    if(form._honey && form._honey.value){return false;} // 스팸 봇 차단
+    btn.disabled=true; btn.textContent='접수 중...';
+    fetch(FORM_ENDPOINT,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(Object.fromEntries(new FormData(form)))
+    }).then(function(r){return r.json();}).then(function(){
+      document.getElementById('formBox').style.display='none';
+      document.getElementById('success').style.display='block';
+      document.getElementById('apply').scrollIntoView({behavior:'smooth'});
+    }).catch(function(){
+      btn.disabled=false; btn.textContent='무료 상담 신청하기';
+      alert('전송에 일시적으로 실패했어요. 잠시 후 다시 시도하시거나 전화로 연락 주세요.');
+    });
     return false;
   }
 </script>
