@@ -220,7 +220,7 @@
             <option>기장 대행</option><option>종합소득세</option><option>부가세</option><option>법인세</option><option>양도세</option><option>창업/사업자등록</option><option>기타</option></select></div>
         <div><label>간단 메모 (선택)</label><textarea name="메모" rows="3" placeholder="현재 상황이나 궁금한 점을 적어주세요."></textarea></div>
         <button id="submitBtn" type="submit" class="btn btn-gold btn-block">무료 상담 신청하기</button>
-        <p class="form-note">🔒 입력 정보는 상담 목적 외에 사용되지 않습니다.</p>
+        <p class="form-note">※ 데모 페이지입니다 — 실제 상담은 접수되지 않으며, 입력 정보는 전송·저장되지 않습니다.</p>
       </form>
     </div>
     <div class="success" id="success">
@@ -249,27 +249,18 @@
 </div>
 
 <script>
-  // ▼▼ 상담 신청을 받을 이메일 (실제 고객 사이트는 이 한 줄만 고객 이메일로 교체) ▼▼
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/rkdalwjd080522@gmail.com";
-  // ▲▲ 처음 1회 제출하면 이 메일로 활성화 확인 메일이 옵니다 → 클릭하면 이후 정상 수신 ▲▲
+  // [공개 데모] 이 페이지는 실제 상담을 접수하지 않습니다 — 개인정보를 일절 전송/수집하지 않음.
+  // ── 실제 고객 사이트 납품 시에만 아래처럼 연결 ──
+  //   1) 폼에 '개인정보 수집·이용 동의' 필수 체크박스 + 처리방침 링크 추가
+  //   2) 수신 이메일은 반드시 '그 세무사 본인 이메일'로:
+  //      var FORM_ENDPOINT="https://formsubmit.co/ajax/세무사이메일";
+  //      fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+  //            body:JSON.stringify(Object.fromEntries(new FormData(form)))}).then(...);
   function submitForm(e){
     e.preventDefault();
-    var form=document.getElementById('applyForm');
-    var btn=document.getElementById('submitBtn');
-    if(form._honey && form._honey.value){return false;} // 스팸 봇 차단
-    btn.disabled=true; btn.textContent='접수 중...';
-    fetch(FORM_ENDPOINT,{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(Object.fromEntries(new FormData(form)))
-    }).then(function(r){return r.json();}).then(function(){
-      document.getElementById('formBox').style.display='none';
-      document.getElementById('success').style.display='block';
-      document.getElementById('apply').scrollIntoView({behavior:'smooth'});
-    }).catch(function(){
-      btn.disabled=false; btn.textContent='무료 상담 신청하기';
-      alert('전송에 일시적으로 실패했어요. 잠시 후 다시 시도하시거나 전화로 연락 주세요.');
-    });
+    document.getElementById('formBox').style.display='none';
+    document.getElementById('success').style.display='block';
+    document.getElementById('apply').scrollIntoView({behavior:'smooth'});
     return false;
   }
 </script>
