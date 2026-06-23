@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>김기범 세무회계 | 평택 마을세무사 · 소상공인·프리랜서 세무</title>
+<meta name="description" content="평택 마을세무사 김기범 세무회계 — 기장대행·종합소득세·양도세·상속증여·법인까지. 첫 상담 무료, 비대면 가능. 031-667-6037" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#F5F8FC; --surface:#FFFFFF; --navy:#1E3A5F; --navy-d:#142943; --gold:#C49A3F; --gold-d:#A97F2C;
+    --text:#1E2733; --muted:#5C6776; --tint:#EAF0F8; --line:#E2E8F1; --maxw:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;border-radius:10px;padding:13px 24px;cursor:pointer;border:none;font-family:inherit;transition:.18s;white-space:nowrap}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-gold:hover{background:var(--gold-d)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-d)}
+  .btn-out{background:#fff;color:var(--navy);border:1px solid var(--line)}
+  .btn-out:hover{border-color:var(--navy)}
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;color:var(--navy)}
+  .logo .lm{width:30px;height:30px;border-radius:8px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;letter-spacing:-.02em}
+  .nlinks{display:flex;gap:28px;font-size:15px;color:var(--muted);font-weight:500}
+  .nlinks a:hover{color:var(--navy)}
+  .ncta{display:flex;align-items:center;gap:14px}
+  .ntel{font-weight:800;color:var(--navy);font-size:16px}
+  @media(max-width:860px){.nlinks,.ntel{display:none}}
+
+  header.hero{position:relative;background:linear-gradient(160deg,#1E3A5F,#142943);color:#fff;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;opacity:.5;background:radial-gradient(600px 300px at 85% 10%,rgba(196,154,63,.18),transparent 70%)}
+  .hero .wrap{position:relative;z-index:1;padding:84px 24px 90px;max-width:760px}
+  .hero h1{font-size:clamp(32px,5.2vw,52px);line-height:1.18;font-weight:800;letter-spacing:-.02em;margin:18px 0 0}
+  .hero h1 .g{color:var(--gold)}
+  .hero p{font-size:clamp(16px,2vw,18px);color:rgba(255,255,255,.82);margin-top:20px;max-width:540px}
+  .hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+  .hero-note{margin-top:18px;font-size:14px;color:rgba(255,255,255,.6)}
+
+  .trust{background:var(--surface);border-bottom:1px solid var(--line)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:30px 24px}
+  @media(max-width:760px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:22px}}
+  .tr{display:flex;gap:11px;align-items:center}
+  .tr svg{width:26px;height:26px;color:var(--gold);flex-shrink:0}
+  .tr b{display:block;font-size:15px;font-weight:700;color:var(--navy)}
+  .tr span{font-size:13px;color:var(--muted)}
+
+  section{padding:84px 0}
+  .sec-h{text-align:center;max-width:600px;margin:0 auto 50px}
+  .sec-h h2{font-size:clamp(26px,3.6vw,38px);font-weight:800;color:var(--navy);letter-spacing:-.02em;margin:12px 0 12px;line-height:1.25}
+  .sec-h p{color:var(--muted);font-size:16px}
+
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:880px){.work-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.work-grid{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:26px 24px;transition:.18s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(30,58,95,.1);border-color:#cfdaea}
+  .card .ic{width:46px;height:46px;border-radius:11px;background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .card .ic svg{width:23px;height:23px}
+  .card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:7px}
+  .card p{font-size:14px;color:var(--muted)}
+
+  .about{background:var(--navy);color:#fff}
+  .about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
+  @media(max-width:820px){.about .wrap{grid-template-columns:1fr;gap:34px}}
+  .about .ph{aspect-ratio:1/1;border-radius:18px;background:linear-gradient(150deg,#27496f,#16263f);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .about .ph .badge{text-align:center}
+  .about .ph .badge .nm{font-size:30px;font-weight:800;letter-spacing:.04em}
+  .about .ph .badge .ti{font-size:15px;color:var(--gold);margin-top:6px}
+  .about .ph svg{width:64px;height:64px;color:rgba(255,255,255,.16);position:absolute;top:24px;left:24px}
+  .about h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.3;margin-bottom:16px}
+  .about p{color:rgba(255,255,255,.8);font-size:16px;margin-bottom:14px}
+  .about .pts{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+  .about .pt{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:rgba(255,255,255,.92)}
+  .about .pt svg{width:21px;height:21px;color:var(--gold);flex-shrink:0;margin-top:3px}
+
+  .steps{background:var(--bg)}
+  .step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:760px){.step-grid{grid-template-columns:1fr}}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:30px 26px;position:relative}
+  .step .no{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .step h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:7px}
+  .step p{font-size:14px;color:var(--muted)}
+
+  .visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  @media(max-width:820px){.visit .wrap{grid-template-columns:1fr;gap:32px}}
+  .visit h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;color:var(--navy);letter-spacing:-.02em;margin:12px 0 22px;line-height:1.3}
+  .vrow{display:flex;gap:13px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}
+  .vrow:last-child{border-bottom:none}
+  .vrow svg{width:21px;height:21px;color:var(--gold);flex-shrink:0;margin-top:3px}
+  .vrow b{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-bottom:2px}
+  .vrow span{font-size:16px;color:var(--text);font-weight:600}
+  .mapbox{aspect-ratio:4/3;border-radius:15px;background:var(--tint);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--navy);text-align:center;padding:20px}
+  .mapbox svg{width:40px;height:40px;color:var(--navy);opacity:.5;margin-bottom:10px}
+  .mapbox b{font-size:16px}
+  .mapbox span{font-size:13px;color:var(--muted);margin-top:4px}
+
+  form{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px;box-shadow:0 12px 30px rgba(30,58,95,.07)}
+  form .ft{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px}
+  form .fs{font-size:14px;color:var(--muted);margin-bottom:20px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px;font-weight:500}
+  .field input,.field textarea{width:100%;background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 14px;color:var(--text);font-family:inherit;font-size:15px;transition:.15s}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(30,58,95,.1)}
+  .field textarea{resize:vertical;min-height:90px}
+  form button{width:100%;justify-content:center;margin-top:4px}
+  .priv{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
+  .ok{display:none;text-align:center;padding:24px 8px}
+  .ok svg{width:50px;height:50px;color:var(--gold);margin-bottom:12px}
+  .ok h3{font-size:19px;color:var(--navy);margin-bottom:7px}
+  .ok p{color:var(--muted);font-size:15px}
+
+  .cta-final{background:linear-gradient(160deg,#1E3A5F,#142943);color:#fff;text-align:center}
+  .cta-final h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;margin-bottom:12px}
+  .cta-final p{color:rgba(255,255,255,.8);margin-bottom:26px}
+
+  footer{background:var(--navy-d);color:rgba(255,255,255,.7);padding:40px 0 34px;font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer .logo{color:#fff;font-size:17px;margin-bottom:8px}
+  footer .fn{font-size:13px;opacity:.7;line-height:1.9}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#" class="logo"><span class="lm">세무</span>김기범 세무회계</a>
+  <div class="nlinks"><a href="#work">업무분야</a><a href="#about">세무사 소개</a><a href="#visit">오시는길</a><a href="#contact">상담신청</a></div>
+  <div class="ncta"><a href="tel:0316676037" class="ntel">031-667-6037</a><a href="#contact" class="btn btn-gold">무료 상담</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">평택 마을세무사</span>
+  <h1>복잡한 세금,<br><span class="g">마을세무사</span>가 쉽게 풀어드립니다.</h1>
+  <p>소상공인·프리랜서·1인 사장님의 곁에서 기장부터 절세까지. 어렵게 설명하지 않고, 꼭 필요한 것만 챙겨드립니다. 첫 상담은 무료입니다.</p>
+  <div class="hero-cta">
+    <a href="#contact" class="btn btn-gold">무료 세무상담 신청 →</a>
+    <a href="tel:0316676037" class="btn btn-out">전화 031-667-6037</a>
+  </div>
+  <div class="hero-note">평택시 관광특구로 36, 서정동 탐스빌딩 201호 · 비대면 상담 가능</div>
+</div></header>
+
+<div class="trust"><div class="wrap">
+  <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><b>첫 상담 무료</b><span>부담 없이 먼저</span></div></div>
+  <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg><div><b>비대면 가능</b><span>전화·카톡·방문</span></div></div>
+  <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg><div><b>소상공인 전문</b><span>업종별 맞춤</span></div></div>
+  <div class="tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>평택 지역 밀착</b><span>가까이에서</span></div></div>
+</div></div>
+
+<section id="work"><div class="wrap">
+  <div class="sec-h">
+    <span class="eyebrow">Services</span>
+    <h2>이런 세무, 도와드립니다</h2>
+    <p>창업부터 폐업까지, 사업의 모든 단계에서 세금 걱정을 덜어드립니다.</p>
+  </div>
+  <div class="work-grid">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>기장대행</h3><p>매월 장부 정리부터 4대보험·급여까지. 본업에만 집중하세요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>종합소득세·부가세</h3><p>신고 기한 놓치지 않게 챙기고, 더 낸 세금은 없는지 꼼꼼히.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><h3>양도소득세</h3><p>부동산·주식 양도세, 가장 절세되는 방법으로 신고해 드립니다.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M12 7v5l3 2"/></svg></div><h3>상속·증여세</h3><p>미리 준비할수록 줄어듭니다. 가족 상황에 맞는 절세 설계.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg></div><h3>법인 설립·전환</h3><p>개인에서 법인으로, 언제·어떻게 바꿔야 유리한지 상담해 드립니다.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>세무조사 대응</h3><p>자금출처·세무조사 통지, 혼자 고민 마시고 함께 대응합니다.</p></div>
+  </div>
+</div></section>
+
+<section id="about" class="about"><div class="wrap">
+  <div class="ph">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
+    <div class="badge"><div class="nm">김기범 세무사</div><div class="ti">평택 마을세무사</div></div>
+  </div>
+  <div>
+    <span class="eyebrow" style="color:var(--gold)">About</span>
+    <h2>어려운 세금 용어 대신,<br>이해되는 말로 설명합니다.</h2>
+    <p>세금은 모를 때 가장 손해입니다. 김기범 세무회계는 소상공인과 프리랜서가 "이게 무슨 말이지?" 하지 않도록, 쉬운 말로 풀어 설명하고 꼭 필요한 절세만 챙겨드립니다.</p>
+    <div class="pts">
+      <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>담당 세무사가 직접 상담 — 매번 바뀌지 않습니다.</div>
+      <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>업종·규모에 맞춘 맞춤 기장과 절세 안내.</div>
+      <div class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>전화·카톡으로 편하게, 급할 땐 빠르게 답변.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="steps"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow">Process</span><h2>상담은 이렇게 진행돼요</h2></div>
+  <div class="step-grid">
+    <div class="step"><div class="no">1</div><h3>상담 신청</h3><p>아래 폼이나 전화로 간단히 신청. 사업 내용만 알려주시면 됩니다.</p></div>
+    <div class="step"><div class="no">2</div><h3>무료 진단</h3><p>현재 세금 상황을 살펴보고, 줄일 수 있는 부분을 짚어드립니다.</p></div>
+    <div class="step"><div class="no">3</div><h3>기장·신고 진행</h3><p>맡겨주시면 매월 장부와 모든 신고를 책임지고 챙깁니다.</p></div>
+  </div>
+</div></section>
+
+<section id="visit" class="visit"><div class="wrap">
+  <div>
+    <span class="eyebrow">Visit</span>
+    <h2>오시는 길</h2>
+    <div class="vrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>주소</b><span>평택시 관광특구로 36, 서정동 탐스빌딩 201호</span></div></div>
+    <div class="vrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><b>전화</b><span>031-667-6037</span></div></div>
+    <div class="vrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>상담 시간</b><span>평일 09:00 – 18:00 (점심 12:00–13:00)</span></div></div>
+  </div>
+  <div class="mapbox">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    <b>서정동 탐스빌딩 201호</b>
+    <span>평택 관광특구로 36 · 주차 가능</span>
+  </div>
+</div></section>
+
+<section id="contact" style="background:var(--bg)"><div class="wrap" style="max-width:540px">
+  <form id="inq" novalidate>
+    <div class="ft">무료 세무상담 신청</div>
+    <div class="fs">연락처만 남겨주시면 김기범 세무사가 직접 연락드립니다.</div>
+    <div class="field"><label>이름 / 상호 *</label><input name="name" type="text" placeholder="홍길동 / ○○상회" required /></div>
+    <div class="field"><label>연락처 *</label><input name="phone" type="text" placeholder="010-0000-0000" required /></div>
+    <div class="field"><label>어떤 도움이 필요하신가요?</label><textarea name="message" placeholder="예: 음식점 운영 중인데 종합소득세 신고와 기장이 필요해요."></textarea></div>
+    <button type="submit" class="btn btn-gold">무료 상담 신청하기</button>
+    <div class="priv">남겨주신 정보는 상담 목적으로만 사용됩니다.</div>
+    <div id="ok" class="ok">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+      <h3>상담 신청이 접수되었습니다</h3>
+      <p>김기범 세무사가 영업시간 내에 직접 연락드리겠습니다.</p>
+    </div>
+  </form>
+</div></section>
+
+<section class="cta-final"><div class="wrap">
+  <h2>세금, 더 내고 계신지도 모릅니다.</h2>
+  <p>지금 무료로 점검받아 보세요. 첫 상담은 부담 없이.</p>
+  <a href="tel:0316676037" class="btn btn-gold">전화 상담 031-667-6037</a>
+</div></section>
+
+<footer><div class="wrap">
+  <div>
+    <div class="logo">김기범 세무회계</div>
+    <div class="fn">평택시 관광특구로 36, 서정동 탐스빌딩 201호<br>Tel. 031-667-6037 · 평일 09:00–18:00</div>
+  </div>
+  <div style="text-align:right">
+    <div class="fn">소상공인·프리랜서 세무 · 기장 · 절세<br>© 2026 김기범 세무회계<br><span style="opacity:.6">본 페이지는 제작 예시(미리보기)입니다.</span></div>
+  </div>
+</div></footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){var t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}}});
+  });
+  var form=document.getElementById('inq');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=form.name.value.trim(), p=form.phone.value.trim();
+    if(!n||!p){alert('이름과 연락처를 입력해 주세요.');return;}
+    var btn=form.querySelector('button[type=submit]');
+    btn.textContent='접수 중...'; btn.disabled=true;
+    setTimeout(function(){
+      form.querySelectorAll('.field, button[type=submit], .priv, .ft, .fs').forEach(function(el){el.style.display='none';});
+      document.getElementById('ok').style.display='block';
+    },600);
+  });
+</script>
+</body>
+</html>
